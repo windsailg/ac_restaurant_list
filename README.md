@@ -25,10 +25,6 @@ git clone https://github.com/windsailg/ac_restaurant_list.git
 2.初始化安裝套件
 
 ```
-cd ac_restaurant_list  //切至專案資料夾
-```
-
-```
 npm install  //安裝套件
 ```
 
