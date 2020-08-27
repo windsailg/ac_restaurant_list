@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars')//set view engine
 
 app.use(express.static('public'))
 
-app.get('/', (req , res)=>{
+app.get('/', (req , res) => {
     res.render('index', {restaurant: restaurants.results})
 })
 
@@ -24,7 +24,7 @@ app.get('/restaurant/:restaurant_id',(req , res)=>{
     res.render('show', {restaurant: currentRestaurant})
 })
 
-app.get('/search', (req , res)=>{
+app.get('/search', (req , res) => {
     const keyword = req.query.keyword.trim().toLowerCase()
     const searchedRestaurant = restaurants.results.filter(ele => {
         return ele.name.toLowerCase().includes(keyword) || ele.category.toLowerCase().includes(keyword)
@@ -32,6 +32,6 @@ app.get('/search', (req , res)=>{
     res.render ('index', {restaurant: searchedRestaurant, keywords: keyword})
 })
 
-app.listen (port , () =>{
+app.listen (port , () => {
     console.log(`Express is running on http://localhost:${port}`)
 })
